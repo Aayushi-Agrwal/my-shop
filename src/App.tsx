@@ -1,24 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styles from "./App.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import {
+  faUser,
+  faHeart,
+  faBagShopping,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.app}>
+      <div className={styles.navBar}>
+        <h2>Fnova</h2>
+        <div>
+          <input
+            type="text"
+            placeholder="What are you searching for?"
+            className={styles.input}
+          />
+          <i>
+            <FontAwesomeIcon
+              className={styles.icon}
+              icon={faSearch as IconProp}
+            />
+          </i>
+        </div>
+        <div className={styles.icons}>
+          <FontAwesomeIcon className={styles.icon} icon={faUser as IconProp} />
+          <FontAwesomeIcon className={styles.icon} icon={faHeart as IconProp} />
+          <FontAwesomeIcon
+            className={styles.icon}
+            icon={faBagShopping as IconProp}
+          />
+        </div>
+      </div>
     </div>
   );
 }
